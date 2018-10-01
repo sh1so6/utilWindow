@@ -10,7 +10,7 @@
         <TabControl x:Name="tabControl" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabStripPlacement="Left">
             <TabItem Header="Explorer">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="GridExplorer"/>
+                    <DataGrid x:Name="GridExplorer" MouseDoubleClick="GridExplorer_MouseDoubleClick" IsReadOnly="True" KeyDown="GridExplorer_KeyDown"/>
                 </Grid>
             </TabItem>
             <TabItem Header="TabItem">
