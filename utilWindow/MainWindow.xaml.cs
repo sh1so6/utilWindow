@@ -82,7 +82,6 @@ namespace utilWindow
 		private void GetExplorerItem ()
 		{
 			ObservableCollection<ExplorerItem> Data = new ObservableCollection<ExplorerItem>();
-			Shell shell = new Shell();
 			ShellWindows shellWindows = new ShellWindows();
 			foreach (InternetExplorer ieObj in shellWindows)
 			{
@@ -98,6 +97,31 @@ namespace utilWindow
 				}
 			}
 			this.GridExplorer.ItemsSource = Data;
+		}
+		/// <summary>
+		/// 後日、https://teratail.com/questions/79459 を参考にして変更予定
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void Grid_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.Key == Key.F5)
+			{
+				GetExplorerItem();
+			}
+		}
+
+		/// <summary>
+		/// 後日、https://teratail.com/questions/79459 を参考にして変更予定
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void tabControl_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.Key == Key.F5)
+			{
+				GetExplorerItem();
+			}
 		}
 	}
 }

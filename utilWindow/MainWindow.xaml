@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:utilWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TabControl x:Name="tabControl" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabStripPlacement="Left">
+    <Grid KeyDown="Grid_KeyDown">
+        <Grid.InputBindings>
+            <KeyBinding Gesture="Ctrl+S" Command="{Binding SaveFileCommand}"/>
+        </Grid.InputBindings>
+        <TabControl x:Name="tabControl" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabStripPlacement="Left" KeyDown="tabControl_KeyDown">
             <TabItem Header="Explorer">
                 <Grid Background="#FFE5E5E5">
                     <DataGrid x:Name="GridExplorer" MouseDoubleClick="GridExplorer_MouseDoubleClick" IsReadOnly="True" KeyDown="GridExplorer_KeyDown"/>
